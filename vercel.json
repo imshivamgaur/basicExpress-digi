@@ -5,6 +5,11 @@
       "src": "api/index.js",
       "use": "@vercel/node"
     }
+  ],
+  "routes": [
+    {
+      "src": "/api/teas",
+      "dest": "/api/index.js"
+    }
   ]
 }
-
