@@ -1,0 +1,16 @@
+{
+  "name": "chaiorcode",
+  "version": "1.0.0",
+  "description": "Simple backend server",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "author": "shivam",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}
