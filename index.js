@@ -1,8 +1,9 @@
 import express from "express";
 
 const app = express();
+let port = 3000;
 
-// middleware
+//middleware
 app.use(express.json());
 
 let teaData = [];
@@ -16,12 +17,12 @@ app.post("/teas", (req, res) => {
   res.status(201).send(newTea);
 });
 
-// Get all tea
+// get all tea
 app.get("/teas", (req, res) => {
   res.status(200).send(teaData);
 });
 
-// Get one tea with id
+// get one tea with id
 app.get("/teas/:id", (req, res) => {
   const tea = teaData.find((t) => t.id === parseInt(req.params.id));
   if (!tea) {
@@ -30,7 +31,7 @@ app.get("/teas/:id", (req, res) => {
   res.status(200).send(tea);
 });
 
-// Update tea
+//update tea
 app.put("/teas/:id", (req, res) => {
   const tea = teaData.find((t) => t.id === parseInt(req.params.id));
   if (!tea) {
@@ -42,7 +43,8 @@ app.put("/teas/:id", (req, res) => {
   res.status(200).send(tea);
 });
 
-// Delete tea
+
+//delete tea
 app.delete("/teas/:id", (req, res) => {
   const index = teaData.findIndex((t) => t.id === parseInt(req.params.id));
   if (index === -1) {
@@ -52,5 +54,6 @@ app.delete("/teas/:id", (req, res) => {
   return res.status(200).send(`Deleted tea id: ${req.params.id}`);
 });
 
-// Export the app (important for Vercel)
-export default app;
+app.listen(port, () => {
+  console.log(`Server is running at port ${port}...`);
+});

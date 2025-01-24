@@ -1,14 +1,16 @@
 {
-  "name": "express-api",
+  "name": "chaiorcode",
   "version": "1.0.0",
+  "description": "Simple backend server",
   "main": "index.js",
+  "type": "module",
   "scripts": {
-    "start": "node api/index.js"
+    "start": "node index.js",
+    "dev": "nodemon index.js"
   },
+  "author": "shivam",
+  "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
-  },
-  "engines": {
-    "node": "22.x"
+    "express": "^4.21.2"
   }
 }
