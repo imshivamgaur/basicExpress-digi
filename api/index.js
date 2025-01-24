@@ -54,9 +54,6 @@ app.delete("/teas/:id", (req, res) => {
   return res.status(200).send(`Deleted tea id: ${req.params.id}`);
 });
 
-// app.listen(port, () => {
-//   console.log(`Server is running at port ${port}...`);
-// });
 
 // Export the app
 export default app;
